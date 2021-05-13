@@ -26,7 +26,7 @@ for (i = 0; ops[i].opcode != NULL; i++)
 if (!strcmp(ops[i].opcode, opcode))
 return (ops[i].f);
 }
-if (ops[i].opcode == '\0')
+if (ops[i].opcode != '#')
 {
 fprintf(stderr, "L%d: unknown instruction <opcode>\n", len);
 exit(EXIT_FAILURE);
