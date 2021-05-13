@@ -31,5 +31,5 @@ if (ops[i].opcode == '\0')
 fprintf(stderr, "L%d: unknown instruction <opcode>\n", len);
 exit(EXIT_FAILURE);
 }
-return(NULL);
+return (NULL);
 }
