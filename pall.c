@@ -47,9 +47,9 @@ void _push(stack_t **stack, unsigned int line)
 {
 stack_t *new;
 char *element = strtok(NULL, "\n\t ");
-(void)line;
 if (element == NULL)
 {
+fprintf(stderr, "L%d: usage: push integer\n", line);
 exit(EXIT_FAILURE);
 }
 new = malloc(sizeof(stack_t));
