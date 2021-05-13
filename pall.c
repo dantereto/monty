@@ -20,29 +20,32 @@ void _pall(stack_t **stack, unsigned int len)
       temp = temp->next;
     }
 }
-
-void _push(stack_t **head, unsigned int line)
-{
-  add_dnodeint(&(*head), line);
-}
 void _pint(stack_t **stack, unsigned int line)
 {
   (void)line;
   printf("%d\n", (*stack)->n);
 }
-stack_t *add_dnodeint(stack_t **head, const int n)
+void _push(stack_t **head, unsigned int n)
 {
   stack_t *new;
+  char *element = strtok(NULL, "\n\t ");
+  (void)n;
   new = malloc(sizeof(stack_t));
   if (new == '\0')
-    return ('\0');
-  new->n = n;
+    exit(2);
+  new->n = atoi(element);
   new->prev = NULL;
-  new->next = *head;
   if (*head)
-    (*head)->prev = new;
+    {
+      new->next = *head;
+      (*head)->prev = new;
+      *head = new;
+    }
+  else
+    {
   *head = new;
-  return (new);
+  new->next = NULL;
+    }
 }
 /**
  * add_dnodeint_end - add news nodes to the end of list
