@@ -40,7 +40,7 @@ typedef struct glob_s
 extern glob_t glob;
 void _pall(stack_t **stack, unsigned int len);
 void (*get(char *opcode, unsigned int len))(stack_t **stack, unsigned int line_number);
-void _push(stack_t **head, unsigned int n);
+void _push(stack_t **stack, unsigned int line);
 stack_t *add_dnodeint(stack_t **head, const int n);
 stack_t *add_dnodeint_end(stack_t **head, int n);
 stack_t *get_func(stack_t **head, char *n);
