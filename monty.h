@@ -54,12 +54,12 @@ void _push(stack_t **stack, unsigned int line);
 stack_t *add_dnodeint(stack_t **head, const int n);
 stack_t *add_dnodeint_end(stack_t **head, int n);
 stack_t *get_func(stack_t **head, char *n);
-void hola(stack_t *stack);
+void free_s(stack_t *stack);
 void _pint(stack_t **stack, unsigned int line);
 int delete_dnodeint_at_index(stack_t **head, unsigned int index);
 void _pop(stack_t **stack, unsigned int line);
 void _swap(stack_t **stack, unsigned int line);
 size_t _len(stack_t *stack);
-void _add(stack_t **stack, unsigned int len);
-void _nop(stack_t **stack, unsigned int len);
+void _add(stack_t **stack, unsigned int line);
+void _nop(stack_t **stack, unsigned int line);
 #endif
