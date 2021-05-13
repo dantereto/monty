@@ -34,17 +34,15 @@ while (getline(&buff, &lon, file) != -1)
 buff[strlen(buff) - 1] = '\0';
 line++;
 point = strtok(buff, "\n\t ");
-if (!point || point[0] == '#')
-continue;
 if (point)
 {
 var_name = get(point, line);
 var_name(&stack, line);
 }
 }
+fclose(file);
 free_s(stack);
 free(buff);
-fclose(file);
 exit(EXIT_SUCCESS);
 }
 /**
