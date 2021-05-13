@@ -47,6 +47,11 @@ data = tmp->n;
 tmp->n = (*stack)->n;
 (*stack)->n = data;
 }
+else
+{
+fprintf(stderr, "L%d: can't swap, stack too short\n", line);
+exit(EXIT_FAILURE);
+}
 }
 /**
  * _len - check the len of the stack
