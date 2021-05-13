@@ -23,6 +23,11 @@ void _pall(stack_t **stack, unsigned int len)
 void _pint(stack_t **stack, unsigned int line)
 {
   (void)line;
+  if (stack == NULL || *stack == NULL)
+    {
+      fprintf(stderr, "L%d: can't pint, stack empty\n", line);
+      exit(EXIT_FAILURE);
+    }
   printf("%d\n", (*stack)->n);
 }
 void _push(stack_t **head, unsigned int n)
