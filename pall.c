@@ -29,10 +29,17 @@ void _push(stack_t **head, unsigned int n)
 {
   stack_t *new;
   char *element = strtok(NULL, "\n\t ");
-  (void)n;
+  if (element == NULL)
+    {
+      fprintf(stderr, "L%d: usage: push integer\n", n);
+      exit(EXIT_FAILURE);
+    }
   new = malloc(sizeof(stack_t));
   if (new == '\0')
-    exit(2);
+    {
+    fprintf(stderr, "Error: malloc failed\n");
+    exit(EXIT_FAILURE);
+    }
   new->n = atoi(element);
   new->prev = NULL;
   if (*head)
