@@ -34,7 +34,7 @@ while (getline(&buff, &lon, file) != EOF)
 buff[strlen(buff) - 1] = '\0';
 line++;
 point = strtok(buff, "\n\t ");
-if (point != NULL)
+if (point != NULL && point[0] != '#')
 {
 var_name = get(point, line);
 var_name(&stack, line);
