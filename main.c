@@ -29,12 +29,12 @@ if (!file)
 fprintf(stderr, "Error: Can't open file file %s\n", argv[1]);
 exit(EXIT_FAILURE);
 }
-while (getline(&buff, &lon, file) != EOF)
+while (getline(&buff, &lon, file) != -1)
 {
 buff[strlen(buff) - 1] = '\0';
 line++;
 point = strtok(buff, "\n\t ");
-if (point != NULL && point[0] != '#')
+if (point != NULL)
 {
 var_name = get(point, line);
 var_name(&stack, line);
