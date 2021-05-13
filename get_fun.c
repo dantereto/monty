@@ -23,8 +23,8 @@ stack_t *get_func(stack_t **head, char *n)
     new->next = NULL;
   else
     {
-    new->next = *head;
-    (*head)->prev = new;
+      new->next = *head;
+      (*head)->prev = new;
     }
   *head = new;
   return(new);

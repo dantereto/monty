@@ -36,6 +36,7 @@ int main(int argc, char *argv[])
       var_name = get(point, line);
       var_name(&stack, line);
     }
+  hola(stack);
   free(buff);
   fclose(file);
   exit(EXIT_SUCCESS);
