@@ -10,7 +10,7 @@
  */
 void _pop(stack_t **stack, unsigned int line)
 {
-if (stack && stack)
+if (stack && *stack)
 {
 stack_t *tmp = *stack;
 *stack = tmp->next;
