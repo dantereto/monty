@@ -12,7 +12,8 @@ void _pop(stack_t **stack, unsigned int line)
 {
 if (stack && *stack)
 {
-stack_t *tmp = *stack;
+stack_t *tmp = '\0';
+tmp = *stack;
 *stack = tmp->next;
 if (tmp->next)
 tmp->next->prev = NULL;
