@@ -28,7 +28,7 @@ return (ops[i].f);
 }
 if (ops[i].opcode == NULL)
 {
-fprintf(stderr, "L%d: unknown instruction <opcode>\n", len);
+fprintf(stderr, "L%d: unknown instruction %s\n", len, opcode);
 exit(EXIT_FAILURE);
 }
 return (NULL);
