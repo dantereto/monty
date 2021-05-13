@@ -38,7 +38,7 @@ printf("%d\n", (*stack)->n);
 }
 /**
  * _push - add node to the stack
- *@n: the stack
+ *@stack: the stack
  *@line: the line of error
  *Return: reyturn 0
  *stack_t **stack, unsigned int line

@@ -2,82 +2,65 @@
 #include <stdlib.h>
 #include <stdio.h>
 /**
- * clear_bit - set the bit on 0 to index
- *@n: the number
- *@index: the index
+ * _pop - delete a node of the stack
+ *@stack: the stack
+ *@line: the line of error
  *Return: reyturn 0
  *stack_t **stack, unsigned int line
  */
-void _pop(stack_t **stack, unsigned int len)
+void _pop(stack_t **stack, unsigned int line)
 {
-  (void)len;
-  if (stack && stack)
-    {
-      stack_t *tmp = *stack;
-      *stack = tmp->next;
-      if (tmp->next)
-	tmp->next->prev = NULL;
-      free(tmp);
-    }
-  else
-    {
-      fprintf(stderr, "L%d: can't pop an empty stack\n", len);
-      exit(EXIT_FAILURE);
-    }
-}
-int delete_dnodeint_at_index(stack_t **head, unsigned int index)
+if (stack && stack)
 {
-  stack_t *cont;
-  unsigned int num;
-  if (*head == '\0')
-    return (-1);
-  cont = *head;
-  for (; num < index; num++)
-    {
-      if (cont == '\0')
-	return (-1);
-      cont = cont->next;
-    }
-  if (cont == *head)
-    {
-      *head = cont->next;
-      if (*head != '\0')
-	(*head)->prev = '\0';
-    }
-  else
-    {
-      cont->prev->next = cont->next;
-      cont->next->prev = cont->prev;
-    }
-  free(cont);
-  return (1);
+stack_t *tmp = *stack;
+*stack = tmp->next;
+if (tmp->next)
+tmp->next->prev = NULL;
+free(tmp);
 }
-void _swap(stack_t **stack, unsigned int len)
+else
 {
-  int data, number = 0;
-  (void)len;
-  number = _len(*stack);
-  if (number >= 2)
-    {
-      stack_t *tmp = (*stack)->next;
-      data = tmp->n;
-      tmp->n = (*stack)->n;
-      (*stack)->n = data;
-    }
+fprintf(stderr, "L%d: can't pop an empty stack\n", line);
+exit(EXIT_FAILURE);
 }
+}
+/**
+ * _swap - swap nodes
+ *@stack: the stack
+ *@line: the line of error
+ *Return: reyturn 0
+ */
+void _swap(stack_t **stack, unsigned int line)
+{
+int data, number = 0;
+(void)line;
+number = _len(*stack);
+if (number >= 2)
+{
+stack_t *tmp = (*stack)->next;
+data = tmp->n;
+tmp->n = (*stack)->n;
+(*stack)->n = data;
+}
+}
+/**
+ * _len - check the len of the stack
+ *@stack: the stack
+ *Return: reyturn 0
+ */
 size_t _len(stack_t *stack)
 {
-  int n = 0;
-  stack_t *tmp = NULL;
-  tmp = stack;
-  if(stack)
-    {
-      while (tmp)
-	{
-	  tmp = tmp->next;
-	  n++;
-	}
-      return(n);
-    }
-  return('\0');
+int n = 0;
+stack_t *tmp = NULL;
+tmp = stack;
+if (stack)
+{
+while (tmp)
+{
+tmp = tmp->next;
+n++;
+}
+return (n);
+}
+return ('\0');
 }
