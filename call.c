@@ -14,6 +14,8 @@ void (*get(char *opcode, unsigned int len))(stack_t **stack, unsigned int line_n
     {"pall", _pall},
     {"push", _push},
     {"pint", _pint}, 
+    {"pop", _pop},
+    {"swap", _swap},
     {NULL, NULL}
   }; 
   (void)len;
