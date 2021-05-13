@@ -21,7 +21,7 @@ void _pop(stack_t **stack, unsigned int len)
     }
   else
     {
-      fprintf(stderr, "L%d: can't pop an empty stack", len);
+      fprintf(stderr, "L%d: can't pop an empty stack\n", len);
       exit(EXIT_FAILURE);
     }
 }
