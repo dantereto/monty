@@ -51,3 +51,5 @@ int delete_dnodeint_at_index(stack_t **head, unsigned int index);
 void _pop(stack_t **stack, unsigned int len);
 void _swap(stack_t **stack, unsigned int len);
 size_t _len(stack_t *stack);
+void _add(stack_t **stack, unsigned int len);
+void _nop(stack_t **stack, unsigned int len);
