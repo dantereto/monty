@@ -19,6 +19,11 @@ void _pop(stack_t **stack, unsigned int len)
 	tmp->next->prev = NULL;
       free(tmp);
     }
+  else
+    {
+      fprintf(stderr, "L%d: can't pop an empty stack", len);
+      exit(EXIT_FAILURE);
+    }
 }
 int delete_dnodeint_at_index(stack_t **head, unsigned int index)
 {
