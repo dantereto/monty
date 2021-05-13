@@ -24,6 +24,11 @@ sum += (*stack)->next->n;
 _pop(stack, line);
 (*stack)->n = sum;
 }
+else
+{
+fprintf(stderr, "L%d: can't add, stack too short\n", line);
+exit(EXIT_FAILURE);
+}
 }
 /**
  * _nop - nop
