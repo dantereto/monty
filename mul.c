@@ -20,9 +20,8 @@ exit(EXIT_FAILURE);
 if (num >= 2)
 {
 mul = (*stack)->n;
-mul += (*stack)->next->n;
 _pop(stack, line);
-(*stack)->n = mul;
+(*stack)->n *= mul;
 }
 else
 {
