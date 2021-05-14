@@ -54,7 +54,7 @@ int sum = 0, num;
 num = _len(*stack);
 if (stack == NULL || *stack == NULL)
 {
-fprintf(stderr, "L%d: can't add, stack too short\n", line);
+fprintf(stderr, "L%d: can't sub, stack too short\n", line);
 exit(EXIT_FAILURE);
 }
 if (num >= 2)
