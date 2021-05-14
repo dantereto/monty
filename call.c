@@ -19,6 +19,7 @@ instruction_t ops[] = {
 {"add", _add},
 {"nop", _nop},
 {"sub", _sub},
+{"div", _div},
 {NULL, NULL}
 };
 (void)len;
