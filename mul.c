@@ -62,3 +62,29 @@ fprintf(stderr, "L%d: can't mod, stack too short\n", line);
 exit(EXIT_FAILURE);
 }
 }
+/**
+ * _pchar - pchar
+ *@stack: the stack
+ *@line: the line of error
+ *Return: reyturn 0
+ *stack_t **stack, unsigned int line
+ */
+void _pchar(stack_t **stack, unsigned int line)
+{
+int cha = 0;
+if (stack == NULL || *stack == NULL)
+{
+fprintf(stderr, "L%d: can't pchar, stack empty\n", line);
+exit(EXIT_FAILURE);
+}
+cha = (*stack)->n;
+if ((*stack)->n < 0 || (*stack)->n > 127)
+{
+fprintf(stderr, "L%d: can't pchar, value out of range\n", line);
+exit(EXIT_FAILURE);
+}
+else
+{
+printf("%c\n", cha);
+}
+}
