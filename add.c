@@ -70,7 +70,7 @@ exit(EXIT_FAILURE);
 }
 }
 /**
- * div - div element of the stack
+ * _div - div element of the stack
  *@stack: the stack
  *@line: the line of error
  *Return: reyturn 0
