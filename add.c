@@ -65,7 +65,7 @@ _pop(stack, line);
 }
 else
 {
-fprintf(stderr, "L%d: can't add, stack too short\n", line);
+fprintf(stderr, "L%d: can't sub, stack too short\n", line);
 exit(EXIT_FAILURE);
 }
 }
