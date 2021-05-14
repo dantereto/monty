@@ -50,7 +50,7 @@ void _nop(stack_t **stack, unsigned int line)
  */
 void _sub(stack_t **stack, unsigned int line)
 {
-int sum = 0, num;
+int sub = 0, num;
 num = _len(*stack);
 if (stack == NULL || *stack == NULL)
 {
@@ -59,9 +59,9 @@ exit(EXIT_FAILURE);
 }
 if (num >= 2)
 {
-sum = (*stack)->n;
+sub = (*stack)->n;
 _pop(stack, line);
-(*stack)->n -= sum;
+(*stack)->n -= sub;
 }
 else
 {
@@ -78,7 +78,7 @@ exit(EXIT_FAILURE);
  */
 void _div(stack_t **stack, unsigned int line)
 {
-int sum = 0, num;
+int div = 0, num;
 num = _len(*stack);
 if (stack == NULL || *stack == NULL)
 {
@@ -87,9 +87,14 @@ exit(EXIT_FAILURE);
 }
 if (num >= 2)
 {
-sum = (*stack)->n;
+div = (*stack)->n;
 _pop(stack, line);
-(*stack)->n /= sum;
+if (div == 0)
+{
+fprintf(stderr, "L%d: division by zero\n", line);
+exit(EXIT_FAILURE);
+}
+(*stack)->n /= div;
 }
 else
 {
